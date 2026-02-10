@@ -18,10 +18,10 @@ function selectTheme(theme: string | null) {
     <button
       @click="selectTheme(null)"
       :class="[
-        'shrink-0 px-3 py-1.5 rounded-full text-sm font-semibold transition-all duration-200',
+        'shrink-0 px-4 py-2.5 rounded-2xl text-sm font-mono font-light transition-all duration-200',
         activeTheme === null
-          ? 'bg-lego-red text-white shadow-sm'
-          : 'bg-white text-lego-dark-gray border border-gray-200 hover:border-lego-red/30 hover:text-lego-red'
+          ? 'bg-brand-600 text-white'
+          : 'bg-white text-brand-900/60 border border-brand-600/10 hover:border-brand-600/20 hover:text-brand-600'
       ]"
     >
       Tous
@@ -31,10 +31,10 @@ function selectTheme(theme: string | null) {
       :key="theme"
       @click="selectTheme(theme)"
       :class="[
-        'shrink-0 px-3 py-1.5 rounded-full text-sm font-semibold transition-all duration-200',
+        'shrink-0 px-4 py-2.5 rounded-2xl text-sm font-mono font-light transition-all duration-200',
         activeTheme === theme
-          ? 'bg-lego-red text-white shadow-sm'
-          : 'bg-white text-lego-dark-gray border border-gray-200 hover:border-lego-red/30 hover:text-lego-red'
+          ? 'bg-brand-600 text-white'
+          : 'bg-white text-brand-900/60 border border-brand-600/10 hover:border-brand-600/20 hover:text-brand-600'
       ]"
     >
       {{ theme }}

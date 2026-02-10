@@ -7,13 +7,13 @@ const { data: allLegos } = await useAsyncData('all-legos', () =>
 
 const { data: themesData } = await useAsyncData('themes', () =>
   queryContent('themes')
-    .findOne()
+    .sort({ title: 1 })
+    .find()
 )
 
 const themes = computed(() => {
-  const themeList = (themesData.value as any)?.themes
-  if (!Array.isArray(themeList)) return []
-  return themeList.map((t: { name: string }) => t.name)
+  if (!Array.isArray(themesData.value)) return []
+  return themesData.value.map((t: any) => t.title).filter(Boolean)
 })
 
 const {
@@ -31,8 +31,8 @@ const {
   <div>
     <AppHeader :total-count="totalCount" />
 
-    <main class="max-w-screen-xl mx-auto px-4 py-6">
-      <div class="flex flex-col sm:flex-row gap-3 mb-5">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <div class="flex flex-col sm:flex-row gap-3 mb-8">
         <SearchBar v-model="searchQuery" class="flex-1" />
         <SortSelector
           :current-sort="currentSort"
@@ -44,10 +44,10 @@ const {
         :themes="themes"
         :active-theme="activeTheme"
         @update:active-theme="activeTheme = $event"
-        class="mb-5"
+        class="mb-8"
       />
 
-      <p class="text-sm text-lego-dark-gray mb-4 font-medium">
+      <p class="font-mono text-sm text-brand-600 mb-6">
         {{ totalCount }} set{{ totalCount !== 1 ? 's' : '' }}
       </p>
 

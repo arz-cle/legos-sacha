@@ -5,20 +5,21 @@ defineProps<{
 </script>
 
 <template>
-  <header class="bg-lego-red text-white shadow-md">
-    <div class="max-w-screen-xl mx-auto px-4 py-5 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-lego-yellow rounded-lg flex items-center justify-center shadow-sm">
-          <span class="text-lego-black font-extrabold text-lg">L</span>
-        </div>
+  <header class="bg-white border-b border-brand-600/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-20">
+      <div class="flex items-end justify-between gap-6">
         <div>
-          <h1 class="text-xl sm:text-2xl font-extrabold tracking-tight">
-            Collection LEGO de Sacha
+          <p class="font-mono text-sm text-brand-600 mb-3">
+            Collection LEGO
+          </p>
+          <h1 class="text-5xl sm:text-7xl font-bold tracking-tighter text-brand-600 leading-none">
+            Les LEGO<br />de Sacha
           </h1>
         </div>
-      </div>
-      <div v-if="totalCount !== undefined" class="hidden sm:flex items-center gap-2 bg-white/20 rounded-full px-3 py-1">
-        <span class="text-sm font-semibold">{{ totalCount }} set{{ totalCount !== 1 ? 's' : '' }}</span>
+        <div v-if="totalCount !== undefined" class="hidden sm:block text-right">
+          <p class="font-mono text-sm text-brand-600">Sets</p>
+          <p class="text-5xl font-semibold tracking-tight text-brand-900 mt-0.5">{{ totalCount }}</p>
+        </div>
       </div>
     </div>
   </header>

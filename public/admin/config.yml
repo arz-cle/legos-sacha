@@ -1,5 +1,6 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: arz-cle/legos-sacha
   branch: main
 
 media_folder: "public/images/legos"
@@ -11,38 +12,42 @@ slug:
   sanitize_replacement: "-"
 
 collections:
-  - name: "settings"
-    label: "Parametres"
-    files:
-      - name: "themes"
-        label: "Themes"
-        file: "content/themes.json"
-        fields:
-          - name: "themes"
-            label: "Themes"
-            widget: "list"
-            fields:
-              - { name: "name", label: "Nom du theme", widget: "string" }
-              - { name: "slug", label: "Slug", widget: "string" }
+  - name: "themes"
+    label: "Themes"
+    folder: "content/themes"
+    create: true
+    delete: true
+    slug: "{{fields.title}}"
+    identifier_field: "title"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { name: "title", label: "Nom du theme", widget: "string", required: true }
 
   - name: "legos"
     label: "LEGO Sets"
     folder: "content/legos"
     create: true
     delete: true
-    slug: "{{slug}}"
+    slug: "{{fields.name}}"
+    identifier_field: "name"
     extension: "md"
     format: "frontmatter"
+    media_folder: "/public/images/legos"
+    public_folder: "/images/legos"
+    sortable_fields: ["name", "date", "theme"]
+    view_filters:
+      - label: "Par theme"
+        field: "theme"
     fields:
       - { name: "name", label: "Nom", widget: "string", required: true }
       - name: "theme"
         label: "Theme"
         widget: "relation"
-        collection: "settings"
-        file: "themes"
-        search_fields: ["themes.*.name"]
-        display_fields: ["themes.*.name"]
-        value_field: "themes.*.name"
+        collection: "themes"
+        value_field: "title"
+        search_fields: ["title"]
+        display_fields: ["title"]
         required: true
       - { name: "image", label: "Image", widget: "image", required: true }
       - { name: "date", label: "Date d'acquisition", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }

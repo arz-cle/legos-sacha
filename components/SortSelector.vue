@@ -9,14 +9,14 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <div class="flex bg-white border border-gray-200 rounded-xl overflow-hidden">
+  <div class="flex bg-white border border-brand-600/10 rounded-2xl overflow-hidden">
     <button
       @click="emit('update:currentSort', 'date')"
       :class="[
-        'px-3 py-2 text-sm font-semibold transition-all duration-200',
+        'px-5 py-3 text-sm font-mono font-light transition-all duration-200',
         currentSort === 'date'
-          ? 'bg-lego-blue text-white'
-          : 'text-lego-dark-gray hover:text-lego-blue'
+          ? 'bg-brand-600 text-white'
+          : 'text-brand-900/60 hover:text-brand-600'
       ]"
     >
       Date
@@ -24,10 +24,10 @@ const emit = defineEmits<{
     <button
       @click="emit('update:currentSort', 'name')"
       :class="[
-        'px-3 py-2 text-sm font-semibold transition-all duration-200',
+        'px-5 py-3 text-sm font-mono font-light transition-all duration-200',
         currentSort === 'name'
-          ? 'bg-lego-blue text-white'
-          : 'text-lego-dark-gray hover:text-lego-blue'
+          ? 'bg-brand-600 text-white'
+          : 'text-brand-900/60 hover:text-brand-600'
       ]"
     >
       Nom

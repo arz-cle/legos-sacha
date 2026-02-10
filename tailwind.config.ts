@@ -11,26 +11,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        lego: {
-          red: '#D01012',
-          yellow: '#F5CD2F',
-          blue: '#0055BF',
-          green: '#237841',
-          orange: '#FE8A18',
-          black: '#1B1B1B',
-          'light-gray': '#F4F4F4',
-          'dark-gray': '#6B6B6B',
+        brand: {
+          50: '#eef2ff',
+          100: '#e0e7ff',
+          200: '#c7d2fe',
+          300: '#a5b4fc',
+          400: '#818cf8',
+          500: '#6366f1',
+          600: '#4f46e5',
+          700: '#4338ca',
+          800: '#3730a3',
+          900: '#312e81',
+          950: '#1e1b4b',
         },
       },
       fontFamily: {
-        sans: ['Nunito', 'system-ui', 'sans-serif'],
+        sans: ['DM Sans', 'DM Sans Fallback', 'system-ui', 'sans-serif'],
+        mono: ['DM Mono', 'ui-monospace', 'monospace'],
       },
       borderRadius: {
-        card: '0.75rem',
+        card: '1rem',
       },
       boxShadow: {
-        card: '0 2px 8px rgba(0, 0, 0, 0.08)',
-        'card-hover': '0 8px 24px rgba(0, 0, 0, 0.12)',
+        card: '0 1px 2px rgba(0, 0, 0, 0.04)',
+        'card-hover': '0 4px 12px rgba(0, 0, 0, 0.08)',
       },
     },
   },

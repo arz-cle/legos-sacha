@@ -4,12 +4,13 @@
 
 @layer base {
   body {
-    @apply font-sans bg-gray-50 text-lego-black antialiased;
+    @apply font-sans text-gray-900 antialiased;
+    background: #f8f9ff;
   }
 }
 
 @layer components {
   .badge {
-    @apply inline-block px-2 py-0.5 text-xs font-semibold rounded-full;
+    @apply inline-block px-2.5 py-0.5 text-xs font-mono font-light rounded-full;
   }
 }

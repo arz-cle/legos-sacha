@@ -14,7 +14,7 @@ defineProps<{
   <div>
     <div
       v-if="legos.length > 0"
-      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4"
+      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5"
     >
       <LegoCard
         v-for="lego in legos"
@@ -25,11 +25,13 @@ defineProps<{
 
     <div
       v-else
-      class="text-center py-16"
+      class="text-center py-20"
     >
-      <div class="text-5xl mb-4">🧱</div>
-      <p class="text-lg font-semibold text-lego-dark-gray">Aucun LEGO trouvé</p>
-      <p class="text-sm text-gray-400 mt-1">Essaie de modifier ta recherche ou tes filtres</p>
+      <div class="w-20 h-20 mx-auto mb-5 rounded-xl bg-brand-100 flex items-center justify-center">
+        <span class="text-4xl">🧱</span>
+      </div>
+      <p class="text-xl font-extrabold text-gray-900">Aucun LEGO trouve</p>
+      <p class="text-sm text-gray-400 mt-2">Essaie de modifier ta recherche ou tes filtres</p>
     </div>
 
     <slot name="after" />
