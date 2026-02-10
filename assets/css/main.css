@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans bg-gray-50 text-lego-black antialiased;
+  }
+}
+
+@layer components {
+  .badge {
+    @apply inline-block px-2 py-0.5 text-xs font-semibold rounded-full;
+  }
+}

@@ -1,0 +1,50 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/images/legos"
+public_folder: "/images/legos"
+
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "-"
+
+collections:
+  - name: "settings"
+    label: "Parametres"
+    files:
+      - name: "themes"
+        label: "Themes"
+        file: "content/themes.json"
+        fields:
+          - name: "themes"
+            label: "Themes"
+            widget: "list"
+            fields:
+              - { name: "name", label: "Nom du theme", widget: "string" }
+              - { name: "slug", label: "Slug", widget: "string" }
+
+  - name: "legos"
+    label: "LEGO Sets"
+    folder: "content/legos"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    fields:
+      - { name: "name", label: "Nom", widget: "string", required: true }
+      - name: "theme"
+        label: "Theme"
+        widget: "relation"
+        collection: "settings"
+        file: "themes"
+        search_fields: ["themes.*.name"]
+        display_fields: ["themes.*.name"]
+        value_field: "themes.*.name"
+        required: true
+      - { name: "image", label: "Image", widget: "image", required: true }
+      - { name: "date", label: "Date d'acquisition", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, required: false }
+      - { name: "createdAt", label: "Date d'ajout", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, default: "{{now}}" }
+      - { name: "body", label: "Notes", widget: "markdown", required: false }

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="300" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#F0F0F0"/>
+  <!-- LEGO Brick Body -->
+  <rect x="140" y="100" width="120" height="70" rx="4" fill="#237841" stroke="#1A5C32" stroke-width="2"/>
+  <!-- Studs -->
+  <rect x="155" y="85" width="25" height="18" rx="3" fill="#237841" stroke="#1A5C32" stroke-width="2"/>
+  <rect x="188" y="85" width="25" height="18" rx="3" fill="#237841" stroke="#1A5C32" stroke-width="2"/>
+  <rect x="221" y="85" width="25" height="18" rx="3" fill="#237841" stroke="#1A5C32" stroke-width="2"/>
+  <!-- Highlight on brick -->
+  <rect x="144" y="104" width="112" height="8" rx="2" fill="rgba(255,255,255,0.3)"/>
+  <!-- Theme label -->
+  <text x="200" y="210" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="11" fill="#888" font-weight="bold" letter-spacing="2">NINJAGO</text>
+  <!-- Set name -->
+  <text x="200" y="235" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="16" fill="#333" font-weight="bold">Dragon de Lloyd</text>
+  <!-- Placeholder notice -->
+  <text x="200" y="260" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="10" fill="#AAA">placeholder image</text>
+</svg>
