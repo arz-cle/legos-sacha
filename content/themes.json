@@ -1,14 +1,24 @@
 {
   "themes": [
-    { "name": "Star Wars", "slug": "star-wars" },
-    { "name": "Harry Potter", "slug": "harry-potter" },
-    { "name": "Technic", "slug": "technic" },
-    { "name": "City", "slug": "city" },
-    { "name": "Creator", "slug": "creator" },
-    { "name": "Marvel", "slug": "marvel" },
-    { "name": "Ninjago", "slug": "ninjago" },
-    { "name": "Friends", "slug": "friends" },
-    { "name": "Speed Champions", "slug": "speed-champions" },
-    { "name": "Architecture", "slug": "architecture" }
+    {
+      "name": "Technic",
+      "slug": "technic"
+    },
+    {
+      "name": "City",
+      "slug": "city"
+    },
+    {
+      "name": "Spiderman",
+      "slug": "spiderman"
+    },
+    {
+      "name": "Mario",
+      "slug": "mario"
+    },
+    {
+      "name": "Disney",
+      "slug": "disney"
+    }
   ]
 }
