@@ -38,6 +38,7 @@ export default defineNuxtConfig({
         { name: 'description', content: 'La collection de sets LEGO de Sacha' },
       ],
       link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
         { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
         { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossorigin: '' },
         {
