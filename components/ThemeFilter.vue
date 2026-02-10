@@ -14,7 +14,7 @@ function selectTheme(theme: string | null) {
 </script>
 
 <template>
-  <div class="flex gap-2 overflow-x-auto pb-2 scrollbar-none -mx-4 px-4">
+  <div class="flex flex-wrap gap-2">
     <button
       @click="selectTheme(null)"
       :class="[

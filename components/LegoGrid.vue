@@ -14,7 +14,7 @@ defineProps<{
   <div>
     <div
       v-if="legos.length > 0"
-      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5"
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-5"
     >
       <LegoCard
         v-for="lego in legos"
